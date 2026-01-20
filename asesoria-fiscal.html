@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesoría Fiscal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans m-0 p-0">
+    <header class="flex justify-between items-center bg-gray-900 p-4 border-b-4 border-orange-600">
+        <a href="index.html" class="text-2xl font-bold text-orange-200 no-underline">NC FiscAl</a>
+        <div class="flex items-center space-x-4">
+            <a href="quienes-somos.html" class="text-lg text-orange-200 hover:text-orange-100 no-underline">Quiénes Somos</a>
+            <a href="contactanos.html" class="text-lg text-orange-200 hover:text-orange-100 no-underline">Contáctanos</a>
+            <button class="text-lg cursor-pointer text-orange-200" onclick="toggleMenu()">☰ Servicios</button>
+        </div>
+    </header>
+    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40" onclick="closeMenu()"></div>
+    <nav id="nav-menu" class="fixed top-0 right-0 h-full w-full md:w-64 bg-gray-800 p-4 transform translate-x-full transition-transform duration-300 ease-in-out z-50 border-l-4 border-orange-600">
+        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="index.html">Inicio</a>
+        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="asesoria-fiscal.html"> Servicio Asesoría Fiscal</a>
+        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="servicios-contabilidad.html"> Servicio Integrados y de Contabilidad</a>
+        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="patente-intangibles.html"> Servicio Patente e Intangibles</a>
+        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="migracion-inversion.html"> Servicio Migración por Inversión</a>
+    </nav>
+    <main class="m-5 bg-gradient-to-br from-gray-900 via-orange-900 to-blue-900 text-orange-50 rounded-lg p-8 min-h-screen">
+        <h1 class="text-3xl font-bold mb-4 text-orange-100"><a href="index.html" class="text-inherit no-underline hover:underline">Asesoría Fiscal</a></h1>
+        <p class="text-orange-100 mb-4">Nuestra asesoría fiscal ofrece servicios especializados en planificación tributaria, cumplimiento normativo y optimización de impuestos para individuos y empresas.</p>
+        <ul class="list-disc list-inside text-orange-100 mb-4">
+            <li>Consultoría en impuestos locales, nacionales e internacionales especializados</li>
+            <li>Reembolsos de capital</li>
+            <li>Fusiones, escisiones y liquidaciones</li>
+            <li>Due diligence fiscal para compra-venta de empresas</li>
+            <li>Estudios de precios de transferencias</li>
+            <li>Defensas ante diversas autoridades fiscales</li>
+            <li>Promociones ante autoridades fiscales</li>
+            <li>Identificación y aprovechamiento de estímulos fiscales</li>
+            <li>Impuestos patrimoniales, family office</li>
+            <li>Revisiones fiscales con enfoque 69B y 47B  CFF</li>
+            <li>Opiniones fiscales sobre temas corporativos nacionales e internacionales</li>
+            <li>Análisis de empresas extranjeras que quieren entrar a invertir en México</li>
+        </ul>
+        <a href="contactanos.html" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-lg inline-block mt-8 mx-auto block">ASESORATE</a>
+    </main>
+    <script>
+        const nav = document.getElementById('nav-menu');
+        const backdrop = document.getElementById('backdrop');
+        function toggleMenu() {
+            const isOpen = nav.classList.contains('translate-x-0');
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        }
+        function openMenu() {
+            nav.classList.remove('translate-x-full');
+            nav.classList.add('translate-x-0');
+            backdrop.classList.remove('hidden');
+        }
+        function closeMenu() {
+            nav.classList.add('translate-x-full');
+            nav.classList.remove('translate-x-0');
+            backdrop.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
+
