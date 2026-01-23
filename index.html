@@ -3,52 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>NC FiscAl - Consultores de Negocios</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="font-sans m-0 p-0">
-    <header class="flex justify-between items-center bg-gray-900 p-4 border-b-4 border-orange-600">
-        <a href="index.html" class="text-2xl font-bold text-orange-200 no-underline">NC FiscAl</a>
-        <div class="flex items-center space-x-4">
-            <a href="quienes-somos.html" class="text-lg text-orange-200 hover:text-orange-100 no-underline">Quiénes Somos</a>
-            <a href="contactanos.html" class="text-lg text-orange-200 hover:text-orange-100 no-underline">Contáctanos</a>
-            <button class="text-lg cursor-pointer text-orange-200" onclick="toggleMenu()">☰ Servicios</button>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">NC FiscAl</a>
+            <button class="header-toggle" onclick="toggleHeader()">☰</button>
         </div>
+        <nav class="header-nav" id="header-nav">
+            <a href="quienes-somos.html">Quiénes Somos</a>
+            <a href="contactanos.html">Contáctanos</a>
+            <a href="javascript:void(0)" onclick="toggleMenu()">Servicios ▼</a>
+        </nav>
     </header>
-    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40" onclick="closeMenu()"></div>
-    <nav id="nav-menu" class="fixed top-0 right-0 h-full w-full md:w-64 bg-gray-800 p-4 transform translate-x-full transition-transform duration-300 ease-in-out z-50 border-l-4 border-orange-600">
-        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="index.html">Inicio</a>
-        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="asesoria-fiscal.html"> Servicio Asesoría Fiscal</a>
-        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="servicios-contabilidad.html"> Servicio Integrados y de Contabilidad</a>
-        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="patente-intangibles.html"> Servicio Patente e Intangibles</a>
-        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="migracion-inversion.html"> Servicio Migración por Inversión</a>
+
+    <div id="backdrop" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 50;" onclick="closeMenu(); closeHeader()"></div>
+    
+    <nav id="nav-menu" style="display: none; position: fixed; top: 0; right: 0; height: 100vh; width: 100%; max-width: 300px; background: var(--color-dark); padding: 2rem 1rem; transform: translateX(100%); transition: transform 0.3s ease; z-index: 300; border-left: 4px solid var(--color-orange);">
+        <a href="index.html" style="display: block; margin: 1rem 0; color: var(--color-orange-light); text-decoration: none; font-weight: 600;">Inicio</a>
+        <a href="asesoria-fiscal.html" style="display: block; margin: 1rem 0; color: var(--color-orange-light); text-decoration: none; font-weight: 600;">Asesoría Fiscal</a>
+        <a href="servicios-contabilidad.html" style="display: block; margin: 1rem 0; color: var(--color-orange-light); text-decoration: none; font-weight: 600;">Servicios Integrados y Contabilidad</a>
+        <a href="patente-intangibles.html" style="display: block; margin: 1rem 0; color: var(--color-orange-light); text-decoration: none; font-weight: 600;">Patente e Intangibles</a>
+        <a href="migracion-inversion.html" style="display: block; margin: 1rem 0; color: var(--color-orange-light); text-decoration: none; font-weight: 600;">Migración por Inversión</a>
     </nav>
-    <main class="min-h-screen flex flex-col justify-center items-center p-5 bg-gradient-to-br from-gray-900 via-orange-900 to-blue-900 text-orange-50 text-center">
-        <h2 class="text-lg uppercase tracking-widest mb-2 text-orange-300 font-light">consultores de negocios</h2>
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-orange-100">Nosotros cuidamos tu cumplimiento <br> Tu haces crecer tu negocio</h1>
-        <p class="text-lg md:text-xl mb-8 max-w-2xl text-orange-50 font-light">Equipo multidisciplinario de consultas profesionales visión empresarial con amplia experiencia y trayectoria en el área tributaria.</p>
-        <a href="contactanos.html" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-lg inline-block text-center">ASESORATE</a>
+
+    <main style="min-height: calc(100vh - 70px); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 4rem 2rem;">
+        <div style="max-width: 900px;">
+            <h2 style="font-size: 1.2rem; color: var(--color-blue-light); letter-spacing: 0.15em; margin-bottom: 1rem; text-transform: uppercase; font-weight: 300;">Consultores de Negocios</h2>
+            <h1 style="margin-bottom: 2rem;">Nosotros cuidamos tu cumplimiento<br><span style="color: var(--color-blue-light);">Tu haces crecer tu negocio</span></h1>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--color-white);">Equipo multidisciplinario de profesionales con visión empresarial, amplia experiencia y trayectoria en el área tributaria.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="contactanos.html" class="btn" style="display: inline-block; text-decoration: none;">Asesórate Ahora</a>
+                
+            </div>
+        </div>
     </main>
+
     <script>
         const nav = document.getElementById('nav-menu');
         const backdrop = document.getElementById('backdrop');
+
         function toggleMenu() {
-            const isOpen = nav.classList.contains('translate-x-0');
+            const isOpen = nav.style.transform === 'translateX(0px)';
             if (isOpen) {
                 closeMenu();
             } else {
                 openMenu();
             }
         }
+
         function openMenu() {
-            nav.classList.remove('translate-x-full');
-            nav.classList.add('translate-x-0');
-            backdrop.classList.remove('hidden');
+            nav.style.transform = 'translateX(0)';
+            nav.style.display = 'block';
+            backdrop.style.display = 'block';
         }
+
         function closeMenu() {
-            nav.classList.add('translate-x-full');
-            nav.classList.remove('translate-x-0');
-            backdrop.classList.add('hidden');
+            nav.style.transform = 'translateX(100%)';
+            backdrop.style.display = 'none';
+        }
+
+        function toggleHeader() {
+            const headerNav = document.getElementById('header-nav');
+            const isOpen = headerNav.classList.contains('open');
+            if (isOpen) {
+                closeHeader();
+            } else {
+                openHeader();
+            }
+        }
+
+        function openHeader() {
+            const headerNav = document.getElementById('header-nav');
+            headerNav.classList.add('open');
+            backdrop.style.display = 'block';
+        }
+
+        function closeHeader() {
+            const headerNav = document.getElementById('header-nav');
+            headerNav.classList.remove('open');
+            backdrop.style.display = 'none';
         }
     </script>
 </body>

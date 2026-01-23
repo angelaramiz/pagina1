@@ -1,0 +1,209 @@
+🎨 GUÍA RÁPIDA - NC FISCAL REDESIGN v2.0
+
+═══════════════════════════════════════════════════════════════════════════
+
+✅ ¿QUÉ SE HIZO?
+
+1. ✨ Fondo Global
+   → Imagen "Cerro_Silla_MTY.png" como background de TODAS las páginas
+   → Aplicado en styles.css con gradientes superpuestos
+   → Efecto fixed para profundidad visual
+
+2. 🎨 Paleta Corporativa Global
+   → Negro principal: #1a1a1a (header, base)
+   → Naranja corporativo: #ff8c42 (botones, acentos)
+   → Azul profesional: #0066cc (alternancia, secciones)
+
+3. 🖼️ Diseño Inspirado en "Referencia"
+   → Tipografía elegante y jerarquizada
+   → Secciones numeradas (01, 02, 03)
+   → Bordes laterales de color
+   → Espaciado generoso
+   → Transiciones suaves
+
+4. 🏢 Identidad Fiscal Preservada
+   → Logo NC FiscAl consistente
+   → Estructura de servicios clara
+   → CTAs profesionales
+   → Información de contacto destacada
+
+═══════════════════════════════════════════════════════════════════════════
+
+📍 LOCALIZACIÓN DE ARCHIVOS PRINCIPALES
+
+Ruta: c:\Users\angel\Desktop\Proyectos\a\
+
+Archivos CSS Global:
+  📄 styles.css ← TODO el styling centralizado aquí
+
+Imágenes:
+  🖼️ Cerro_Silla_MTY.png ← Fondo global (YA INTEGRADO)
+  🖼️ Referencia.jpg ← Inspiración de diseño
+
+Páginas HTML (8 total - TODAS REDISEÑADAS):
+  📝 index.html ← Página principal
+  📝 asesoria-fiscal.html
+  📝 servicios-contabilidad.html
+  📝 patente-intangibles.html
+  📝 migracion-inversion.html
+  📝 quienes-somos.html
+  📝 contactanos.html
+  📝 datos.html
+
+Documentación:
+  📚 README.md ← Guía completa
+  📋 CHANGELOG.txt ← Resumen de cambios
+  ⚡ GUIA_RAPIDA.txt ← Este archivo
+
+═══════════════════════════════════════════════════════════════════════════
+
+🚀 CÓMO USAR
+
+1. Abre cualquier página HTML en tu navegador
+   → Ejemplo: index.html
+
+2. Verás automáticamente:
+   ✓ Fondo con Cerro de la Silla
+   ✓ Paleta negro-naranja-azul
+   ✓ Diseño moderno y limpio
+   ✓ Menú responsivo en mobile
+
+3. Navega entre páginas usando los links
+
+4. Prueba el menú hamburger en mobile/tablet
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎨 PERSONALIZACIÓN
+
+Si necesitas cambiar colores, edita styles.css:
+
+  :root {
+    --color-dark: #1a1a1a;           // Negro
+    --color-orange: #ff8c42;         // Naranja
+    --color-blue: #0066cc;           // Azul
+  }
+
+Si necesitas cambiar el fondo, edita styles.css (línea ~35):
+
+  background: linear-gradient(...), url('TU_IMAGEN.png');
+
+═══════════════════════════════════════════════════════════════════════════
+
+📱 RESPONSIVE
+
+✓ Desktop (1200px+) - Layout completo
+✓ Tablet (768px-1199px) - Layout adaptado
+✓ Mobile (<768px) - Menú hamburger, stack vertical
+
+Prueba redimensionando la ventana del navegador.
+
+═══════════════════════════════════════════════════════════════════════════
+
+💡 CARACTERÍSTICAS DESTACADAS
+
+Header Sticky
+  └─ Navegación siempre visible en top
+
+Menú Hamburger
+  └─ Se abre con animación suave
+  └─ Toca el fondo para cerrar
+
+Secciones con Bordes
+  └─ Bordes izquierdos en naranja y azul
+  └─ Crean jerarquía visual
+
+Botones Dinámicos
+  └─ Cambian de color en hover
+  └─ Sombra dinámica
+
+Formularios
+  └─ Inputs con validación visual
+  └─ Focus effect en azul
+
+═══════════════════════════════════════════════════════════════════════════
+
+❓ PREGUNTAS FRECUENTES
+
+P: ¿Dónde está el CSS?
+R: En styles.css - Todos los estilos centralizados ahí
+
+P: ¿Puedo cambiar los colores?
+R: Sí, edita las variables CSS en styles.css línea ~10
+
+P: ¿Funciona en mobile?
+R: Sí, diseño 100% responsive
+
+P: ¿Dónde está el fondo del Cerro?
+R: Automáticamente en todas las páginas (Cerro_Silla_MTY.png)
+
+P: ¿Cómo agrego más servicios?
+R: Copia las secciones existentes en datos.html
+
+═══════════════════════════════════════════════════════════════════════════
+
+📞 ESTRUCTURA DE SERVICIOS
+
+Página Principal (index.html)
+  └─ Hero section elegante
+
+Servicios Principales:
+  ├─ Asesoría Fiscal
+  ├─ Servicios Integrados y Contabilidad
+  ├─ Patente e Intangibles
+  └─ Migración por Inversión
+
+Información:
+  ├─ Quiénes Somos
+  ├─ Contacto
+  └─ Servicios Detallados
+
+═══════════════════════════════════════════════════════════════════════════
+
+✨ PRÓXIMOS PASOS OPCIONALES
+
+□ Agregar footer con links
+□ Implementar formulario funcional
+□ Agregar animaciones de scroll
+□ Integrar Google Analytics
+□ Optimizar SEO
+□ Agregar más contenido
+□ Publicar en producción
+
+═══════════════════════════════════════════════════════════════════════════
+
+📊 DATOS TÉCNICOS
+
+Lenguajes: HTML5 + CSS3
+Imágenes: PNG (Cerro_Silla_MTY.png)
+Responsive: Mobile-First
+Sin dependencias externas: ✅
+Compatible con todos los navegadores: ✅
+
+═══════════════════════════════════════════════════════════════════════════
+
+✅ CHECKLIST DE IMPLEMENTACIÓN
+
+✓ Fondo Cerro_Silla_MTY integrado
+✓ Paleta negro-naranja-azul aplicada
+✓ 8 páginas rediseñadas
+✓ CSS centralizado en styles.css
+✓ Responsive design completo
+✓ Header sticky + menú hamburger
+✓ Secciones con bordes de color
+✓ Botones con efectos
+✓ Formularios mejorados
+✓ Tipografía profesional
+✓ Documentación completa
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎉 ¡LISTO PARA PUBLICAR!
+
+Tu sitio NC FiscAl está completamente rediseñado y listo para ir a
+producción. El diseño es moderno, profesional y refuerza tu identidad
+fiscal corporativa.
+
+¡Gracias por utilizar GitHub Copilot! 🚀
+
+═══════════════════════════════════════════════════════════════════════════

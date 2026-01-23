@@ -3,79 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contáctanos</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Contáctanos - NC FiscAl</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="font-sans m-0 p-0">
-    <header class="flex justify-between items-center bg-gray-900 p-4 border-b-4 border-orange-600">
-        <a href="index.html" class="text-2xl font-bold text-orange-200 no-underline">NC FiscAl</a>
-        <div class="flex items-center space-x-4">
-            <a href="quienes-somos.html" class="text-lg text-orange-200 hover:text-orange-100 no-underline">Quiénes Somos</a>
-            <a href="contactanos.html" class="text-lg text-orange-200 hover:text-orange-100 no-underline">Contáctanos</a>
-            <button class="text-lg cursor-pointer text-orange-200" onclick="toggleMenu()">☰ Servicios</button>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">NC FiscAl</a>
+            <button class="header-toggle" onclick="toggleHeader()">☰</button>
         </div>
+        <nav class="header-nav" id="header-nav">
+            <a href="quienes-somos.html">Quiénes Somos</a>
+            <a href="contactanos.html">Contáctanos</a>
+            <a href="javascript:void(0)" onclick="toggleMenu()">Servicios ▼</a>
+        </nav>
     </header>
-    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40" onclick="closeMenu()"></div>
-    <nav id="nav-menu" class="fixed top-0 right-0 h-full w-full md:w-64 bg-gray-800 p-4 transform translate-x-full transition-transform duration-300 ease-in-out z-50 border-l-4 border-orange-600">
-        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="index.html">Inicio</a>
-        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="asesoria-fiscal.html"> Servicio Asesoría Fiscal</a>
-        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="servicios-contabilidad.html"> Servicio Integrados y de Contabilidad</a>
-        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="patente-intangibles.html"> Servicio Patente e Intangibles</a>
-        <a class="block my-3 text-orange-200 hover:text-orange-100 font-semibold" href="migracion-inversion.html"> Servicio Migración por Inversión</a>
+
+    <div id="backdrop" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 50;" onclick="closeMenu(); closeHeader()"></div>
+    
+    <nav id="nav-menu" style="display: none; position: fixed; top: 0; right: 0; height: 100vh; width: 100%; max-width: 300px; background: var(--color-dark); padding: 2rem 1rem; transform: translateX(100%); transition: transform 0.3s ease; z-index: 300; border-left: 4px solid var(--color-orange);">
+        <a href="index.html" style="display: block; margin: 1rem 0; color: var(--color-orange-light); text-decoration: none; font-weight: 600;">Inicio</a>
+        <a href="asesoria-fiscal.html" style="display: block; margin: 1rem 0; color: var(--color-orange-light); text-decoration: none; font-weight: 600;">Asesoría Fiscal</a>
+        <a href="servicios-contabilidad.html" style="display: block; margin: 1rem 0; color: var(--color-orange-light); text-decoration: none; font-weight: 600;">Servicios Integrados y Contabilidad</a>
+        <a href="patente-intangibles.html" style="display: block; margin: 1rem 0; color: var(--color-orange-light); text-decoration: none; font-weight: 600;">Patente e Intangibles</a>
+        <a href="migracion-inversion.html" style="display: block; margin: 1rem 0; color: var(--color-orange-light); text-decoration: none; font-weight: 600;">Migración por Inversión</a>
     </nav>
-    <main class="min-h-screen flex flex-col justify-center items-center p-5 bg-gradient-to-br from-gray-900 via-orange-900 to-blue-900 text-orange-50 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-orange-100">Contáctanos</h1>
-        <p class="text-lg md:text-xl mb-8 max-w-2xl text-orange-50 font-light">Estamos aquí para ayudarte. Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.</p>
-        <form class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full">
-            <div class="mb-4">
-                <label for="name" class="block text-orange-200 mb-2">Nombre</label>
-                <input type="text" id="name" name="name" class="w-full p-2 bg-gray-700 text-orange-50 border border-orange-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-            </div>
-            <div class="mb-4">
-                <label for="email" class="block text-orange-200 mb-2">Correo Electrónico</label>
-                <input type="email" id="email" name="email" class="w-full p-2 bg-gray-700 text-orange-50 border border-orange-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-            </div>
-            <div class="mb-4">
-                <label for="message" class="block text-orange-200 mb-2">Mensaje</label>
-                <textarea id="message" name="message" rows="4" class="w-full p-2 bg-gray-700 text-orange-50 border border-orange-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
-            </div>
-            <div class="mb-4">
-                <label for="services" class="block text-orange-200 mb-2">Servicios de Interés (Selecciona uno o más)</label>
-                <select id="services" name="services" multiple class="w-full p-2 bg-gray-700 text-orange-50 border border-orange-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" size="4">
-                    <option value="asesoria-fiscal">Asesoría Fiscal</option>
-                    <option value="servicios-contabilidad">Servicios Integrados y de Contabilidad</option>
-                    <option value="patente-intangibles">Servicio Patente e Intangibles</option>
-                    <option value="migracion-inversion">Servicio Migración por Inversión</option>
-                </select>
-            </div>
-            <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-lg w-full">Enviar Mensaje</button>
-        </form>
-        <div class="mt-8 text-orange-200">
-            <p>Teléfono: +1 (123) 456-7890</p>
-            <p>Email: info@ncfiscal.com</p>
-            <p>Dirección: Calle Ficticia 123, Ciudad, País</p>
+
+    <main style="min-height: calc(100vh - 70px); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 3rem 2rem; text-align: center;">
+        <div style="max-width: 600px; width: 100%;">
+            <h1 style="margin-bottom: 1rem;"><span style="color: var(--color-blue-light);">Contáctanos</span></h1>
+            <p style="margin-bottom: 2rem; color: var(--color-blue-light);">Estamos aquí para ayudarte. Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.</p>
+            
+            <form style="background: linear-gradient(135deg, rgba(45, 45, 45, 0.95) 0%, rgba(0, 102, 204, 0.05) 100%); padding: 2rem; border-radius: 8px; border: 2px solid var(--color-blue); box-shadow: 0 8px 24px rgba(0, 102, 204, 0.3); text-align: left;">
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="name" style="display: block; margin-bottom: 0.5rem; color: var(--color-blue-light); font-weight: 600;">Nombre Completo *</label>
+                    <input type="text" id="name" name="name" style="width: 100%; padding: 0.75rem; background-color: var(--color-dark-secondary); border: 2px solid var(--color-blue); color: var(--color-white); border-radius: 4px; font-size: 1rem; transition: all 0.3s ease;" required>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="email" style="display: block; margin-bottom: 0.5rem; color: var(--color-blue-light); font-weight: 600;">Correo Electrónico *</label>
+                    <input type="email" id="email" name="email" style="width: 100%; padding: 0.75rem; background-color: var(--color-dark-secondary); border: 2px solid var(--color-blue); color: var(--color-white); border-radius: 4px; font-size: 1rem; transition: all 0.3s ease;" required>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="phone" style="display: block; margin-bottom: 0.5rem; color: var(--color-blue-light); font-weight: 600;">Teléfono</label>
+                    <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.75rem; background-color: var(--color-dark-secondary); border: 2px solid var(--color-blue); color: var(--color-white); border-radius: 4px; font-size: 1rem; transition: all 0.3s ease;">
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="services" style="display: block; margin-bottom: 0.5rem; color: var(--color-blue-light); font-weight: 600;">Tipo de Servicio *</label>
+                    <select id="services" name="services" style="width: 100%; padding: 0.75rem; background-color: var(--color-dark-secondary); border: 2px solid var(--color-blue); color: var(--color-white); border-radius: 4px; font-size: 1rem; transition: all 0.3s ease;" required>
+                        <option value="">Selecciona un tipo de servicio</option>
+                        <option value="asesoria-fiscal">Asesoría Fiscal</option>
+                        <option value="servicios-contabilidad">Servicios Integrados y de Contabilidad</option>
+                        <option value="patente-intangibles">Patente e Intangibles</option>
+                        <option value="migracion-inversion">Migración por Inversión</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="specific-service" style="display: block; margin-bottom: 0.5rem; color: var(--color-blue-light); font-weight: 600;">Servicio Específico *</label>
+                    <select id="specific-service" name="specific-service" style="width: 100%; padding: 0.75rem; background-color: var(--color-dark-secondary); border: 2px solid var(--color-blue); color: var(--color-white); border-radius: 4px; font-size: 1rem; transition: all 0.3s ease;" required disabled>
+                        <option value="">Primero selecciona un tipo de servicio</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="message" style="display: block; margin-bottom: 0.5rem; color: var(--color-blue-light); font-weight: 600;">Mensaje *</label>
+                    <textarea id="message" name="message" rows="5" style="width: 100%; padding: 0.75rem; background-color: var(--color-dark-secondary); border: 2px solid var(--color-blue); color: var(--color-white); border-radius: 4px; font-size: 1rem; resize: vertical; transition: all 0.3s ease;" required></textarea>
+                </div>
+                <button type="submit" class="btn secondary" style="width: 100%; text-decoration: none;">Enviar Mensaje</button>
+            </form>
+
+            <section style="margin-top: 3rem; background: rgba(0, 102, 204, 0.15); border-left: 6px solid var(--color-blue); padding: 2rem; border-radius: 8px; box-shadow: 0 8px 24px rgba(0, 102, 204, 0.3);">
+                <h2 style="text-align: center; color: var(--color-blue-light); margin-bottom: 1.5rem;">Información de Contacto</h2>
+                <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: left;">
+                    
+                    <div style="padding: 1rem; border-left: 3px solid var(--color-orange); background: rgba(255, 140, 66, 0.1); border-radius: 4px;">
+                        <p style="color: var(--color-orange-light); font-weight: 600; margin-bottom: 0.5rem;">✉️ Email:</p>
+                        <p>info@ncfiscal.com</p>
+                    </div>
+                    <div style="padding: 1rem; border-left: 3px solid var(--color-blue); background: rgba(0, 102, 204, 0.1); border-radius: 4px;">
+                        <p style="color: var(--color-blue-light); font-weight: 600; margin-bottom: 0.5rem;">📍 Dirección:</p>
+                        <p>Monterrey, Nuevo León, México</p>
+                    </div>
+                    
+                </div>
+            </section>
         </div>
     </main>
+
     <script>
         const nav = document.getElementById('nav-menu');
         const backdrop = document.getElementById('backdrop');
+
+        // Datos de servicios específicos por categoría
+        const serviceOptions = {
+            'asesoria-fiscal': [
+                'Asesoría fiscal integral',
+                'Devoluciones de capital',
+                'Reestructuración corporativa',
+                'Asesoría fiscal internacional',
+                'Planificación fiscal estratégica',
+                'Asesoría en fusiones y adquisiciones',
+                'Asesoría fiscal para expatriados',
+                'Asesoría en precios de transferencia',
+                'Asesoría fiscal para criptomonedas'
+            ],
+            'servicios-contabilidad': [
+                'Constitución de sociedades',
+                'Contabilidad financiera',
+                'Reportes financieros',
+                'Cumplimiento tributario',
+                'Auditoría interna',
+                'Asesoría financiera',
+                'Gestión de nómina',
+                'Consultoría administrativa'
+            ],
+            'patente-intangibles': [
+                'Creación de marcas',
+                'Asesoría en activos intangibles'
+            ],
+            'migracion-inversion': [
+                'Obtén una segunda residencia o ciudadanía por inversión',
+                'Asesoría integral en procesos migratorios',
+                'Cumplimiento normativo internacional'
+            ]
+        };
+
+        // Elementos del formulario
+        const serviceTypeSelect = document.getElementById('services');
+        const specificServiceSelect = document.getElementById('specific-service');
+
+        // Función para poblar el dropdown de servicios específicos
+        function populateSpecificServices(serviceType) {
+            // Limpiar opciones actuales
+            specificServiceSelect.innerHTML = '';
+
+            if (serviceType && serviceOptions[serviceType]) {
+                // Habilitar el dropdown
+                specificServiceSelect.disabled = false;
+
+                // Agregar opción por defecto
+                const defaultOption = document.createElement('option');
+                defaultOption.value = '';
+                defaultOption.textContent = 'Selecciona un servicio específico';
+                specificServiceSelect.appendChild(defaultOption);
+
+                // Agregar opciones específicas
+                serviceOptions[serviceType].forEach(service => {
+                    const option = document.createElement('option');
+                    option.value = service.toLowerCase().replace(/\s+/g, '-');
+                    option.textContent = service;
+                    specificServiceSelect.appendChild(option);
+                });
+            } else {
+                // Deshabilitar si no hay tipo seleccionado
+                specificServiceSelect.disabled = true;
+                const defaultOption = document.createElement('option');
+                defaultOption.value = '';
+                defaultOption.textContent = 'Primero selecciona un tipo de servicio';
+                specificServiceSelect.appendChild(defaultOption);
+            }
+        }
+
+        // Event listener para cambios en el tipo de servicio
+        serviceTypeSelect.addEventListener('change', function() {
+            populateSpecificServices(this.value);
+        });
+
         function toggleMenu() {
-            const isOpen = nav.classList.contains('translate-x-0');
+            const isOpen = nav.style.transform === 'translateX(0px)';
             if (isOpen) {
                 closeMenu();
             } else {
                 openMenu();
             }
         }
+
         function openMenu() {
-            nav.classList.remove('translate-x-full');
-            nav.classList.add('translate-x-0');
-            backdrop.classList.remove('hidden');
+            nav.style.transform = 'translateX(0)';
+            nav.style.display = 'block';
+            backdrop.style.display = 'block';
         }
+
         function closeMenu() {
-            nav.classList.add('translate-x-full');
-            nav.classList.remove('translate-x-0');
-            backdrop.classList.add('hidden');
+            nav.style.transform = 'translateX(100%)';
+            backdrop.style.display = 'none';
+        }
+
+        function toggleHeader() {
+            const headerNav = document.getElementById('header-nav');
+            const isOpen = headerNav.classList.contains('open');
+            if (isOpen) {
+                closeHeader();
+            } else {
+                openHeader();
+            }
+        }
+
+        function openHeader() {
+            const headerNav = document.getElementById('header-nav');
+            headerNav.classList.add('open');
+            backdrop.style.display = 'block';
+        }
+
+        function closeHeader() {
+            const headerNav = document.getElementById('header-nav');
+            headerNav.classList.remove('open');
+            backdrop.style.display = 'none';
         }
     </script>
 </body>
