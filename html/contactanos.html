@@ -15,7 +15,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contacto | NC FiscAl">
     <meta name="twitter:description" content="Ponte en contacto con nuestros expertos en asesoría fiscal y patrimonial.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/html/styles.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -26,16 +26,16 @@
 </head>
 <body>
     <video autoplay muted loop style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
-        <source src="src/Cerro_silla_MTY.mp4" type="video/mp4">
+        <source src="/html/src/Cerro_silla_MTY.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <header>
         <div class="header-container">
-            <a href="index.html" class="logo">NC FiscAl</a>
+            <a href="/" class="logo">NC FiscAl</a>
             <button class="header-toggle" onclick="toggleHeader()">☰</button>
             <nav class="header-nav" id="header-nav">
-                <a style="color: var(--color-blue-light);" href="quienes-somos.html">Quiénes Somos</a>
-                <a style="color: var(--color-blue-light);" href="contactanos.html">Contáctanos</a>
+                <a style="color: var(--color-blue-light);" href="/html/quienes-somos.html">Quiénes Somos</a>
+                <a style="color: var(--color-blue-light);" href="/html/contactanos.html">Contáctanos</a>
                 <a style="color: var(--color-blue-light);" href="javascript:void(0)" onclick="toggleMenu()">Servicios ▼</a>
             </nav>
         </div>
@@ -44,11 +44,11 @@
     <div id="backdrop" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 50;" onclick="closeMenu(); closeHeader()"></div>
     
     <nav id="nav-menu" style="display: none; position: fixed; top: 0; right: 0; height: 100vh; width: 100%; max-width: 300px; background: var(--color-dark); padding: 2rem 1rem; transform: translateX(100%); transition: transform 0.3s ease; z-index: 300; border-left: 4px solid var(--color-blue);">
-        <a href="index.html" style="display: block; margin: 1rem 0; color: var(--color-white); text-decoration: none; font-weight: 600;">Inicio</a>
-        <a href="asesoria-fiscal.html" style="display: block; margin: 1rem 0; color: var(--color-white); text-decoration: none; font-weight: 600;">Asesoría Fiscal y Patrimonial</a>
-        <a href="servicios-contabilidad.html" style="display: block; margin: 1rem 0; color: var(--color-white); text-decoration: none; font-weight: 600;">Servicios Integrados y Contabilidad</a>
-        <a href="patente-intangibles.html" style="display: block; margin: 1rem 0; color: var(--color-white); text-decoration: none; font-weight: 600;">Patente e Intangibles</a>
-        <a href="migracion-inversion.html" style="display: block; margin: 1rem 0; color: var(--color-white); text-decoration: none; font-weight: 600;">Migración por Inversión</a>
+        <a href="/" style="display: block; margin: 1rem 0; color: var(--color-white); text-decoration: none; font-weight: 600;">Inicio</a>
+        <a href="/html/asesoria-fiscal.html" style="display: block; margin: 1rem 0; color: var(--color-white); text-decoration: none; font-weight: 600;">Asesoría Fiscal y Patrimonial</a>
+        <a href="/html/servicios-contabilidad.html" style="display: block; margin: 1rem 0; color: var(--color-white); text-decoration: none; font-weight: 600;">Servicios Integrados y Contabilidad</a>
+        <a href="/html/patente-intangibles.html" style="display: block; margin: 1rem 0; color: var(--color-white); text-decoration: none; font-weight: 600;">Patente e Intangibles</a>
+        <a href="/html/migracion-inversion.html" style="display: block; margin: 1rem 0; color: var(--color-white); text-decoration: none; font-weight: 600;">Migración por Inversión</a>
     </nav>
 
     <main style="min-height: calc(100vh - 70px); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 3rem 2rem; text-align: center;">
@@ -56,7 +56,9 @@
             <h1 style="margin-bottom: 2rem;"><span style="color: var(--color-blue-dark);">Contáctanos</span></h1>
             <p style="margin-left: 1rem; color: var(--color-blue-dark); font-size: 1.2rem;">Estamos aquí para ayudarte. Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.</p>
             
-            <form style="background: linear-gradient(150deg, rgba(45, 45, 45, 0.85) 100%, rgba(0, 102, 204, 0.1) 0%); padding: 2rem; border-radius: 8px; border: 2px solid var(--color-blue); box-shadow: 0 8px 24px rgba(0, 102, 204, 0.3); text-align: left;">
+            <form id="contactForm" style="background: linear-gradient(150deg, rgba(45, 45, 45, 0.85) 100%, rgba(0, 102, 204, 0.1) 0%); padding: 2rem; border-radius: 8px; border: 2px solid var(--color-blue); box-shadow: 0 8px 24px rgba(0, 102, 204, 0.3); text-align: left;">
+                <div id="formMessage" style="display: none; margin-bottom: 1.5rem; padding: 1rem; border-radius: 4px; text-align: center; font-weight: 600;"></div>
+                
                 <div style="margin-bottom: 1.5rem;">
                     <label for="name" style="display: block; margin-bottom: 0.5rem; color: var(--color-blue-light); font-weight: 600;">Nombre Completo *</label>
                     <input type="text" id="name" name="name" style="width: 100%; padding: 0.75rem; background-color: var(--color-dark-secondary); border: 2px solid var(--color-blue); color: var(--color-white); border-radius: 4px; font-size: 1rem; transition: all 0.3s ease;" required>
@@ -74,7 +76,7 @@
                     <select id="services" name="services" style="width: 100%; padding: 0.75rem; background-color: var(--color-dark-secondary); border: 2px solid var(--color-blue); color: var(--color-white); border-radius: 4px; font-size: 1rem; transition: all 0.3s ease;" required>
                         <option value="">Selecciona un tipo de servicio</option>
                         <option value="asesoria-fiscal">Asesoría Fiscal y Patrimonial</option>
-                        <option value="servicios-contabilidad">Servicios Integrados y de Contabilidad</option>
+                        <option value="servicios-contabilidad">Servicios Integrados y Contabilidad</option>
                         <option value="patente-intangibles">Patente e Intangibles</option>
                         <option value="migracion-inversion">Migración por Inversión</option>
                     </select>
@@ -89,7 +91,7 @@
                     <label for="message" style="display: block; margin-bottom: 0.5rem; color: var(--color-blue-light); font-weight: 600;">Mensaje *</label>
                     <textarea id="message" name="message" rows="5" style="width: 100%; padding: 0.75rem; background-color: var(--color-dark-secondary); border: 2px solid var(--color-blue); color: var(--color-white); border-radius: 4px; font-size: 1rem; resize: vertical; transition: all 0.3s ease;" required></textarea>
                 </div>
-                <button type="submit" class="btn " style="width: 100%; text-decoration: none;">Enviar Mensaje</button>
+                <button type="submit" id="submitBtn" class="btn" style="width: 100%; text-decoration: none;">Enviar Mensaje</button>
             </form>
 
             <section style="background: linear-gradient(150deg, rgba(45, 45, 45, .85) 100%, rgba(0, 102, 204, .2) 0%); padding: 2rem; border-radius: 8px; border: 2px solid var(--color-blue); box-shadow: 0 8px 24px rgba(0, 102, 204, 0.3); text-align: left;">
@@ -113,36 +115,39 @@
     <script>
         const nav = document.getElementById('nav-menu');
         const backdrop = document.getElementById('backdrop');
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+        const submitBtn = document.getElementById('submitBtn');
 
         // Datos de servicios específicos por categoría
         const serviceOptions = {
             'asesoria-fiscal': [
-                'Asesoría fiscal y patrimonial integral',
-                'Devoluciones de capital',
-                'Reestructuración corporativa',
-                'Asesoría fiscal internacional',
-                'Planificación fiscal estratégica',
-                'Asesoría en fusiones y adquisiciones',
-                'Asesoría fiscal para expatriados',
-                'Asesoría en precios de transferencia',
-                'Asesoría fiscal para criptomonedas',
-                'Planificación patrimonial',
-                'Asesoría en impuestos patrimoniales',
-                'Gestión de activos patrimoniales'
+                'Impuestos patrimoniales, family office',
+                'Consultoría en impuestos locales, nacionales e internacionales especializados en general',
+                'Reembolsos de capital',
+                'Fusiones, escisiones y liquidaciones',
+                'Due diligence fiscal para compra-venta de empresas',
+                'Estudios de precios de transferencias',
+                'Defensas ante diversas autoridades fiscales',
+                'Promociones ante autoridades fiscales',
+                'Identificación y aprovechamiento de estímulos fiscales',
+                'Revisiones fiscales con enfoque 69 B y 47 BIS CFF',
+                'Opiniones fiscales sobre temas corporativos nacionales e internacionales',
+                'Análisis fiscal para empresas extranjeras que quieren entrar a invertir en México'
             ],
             'servicios-contabilidad': [
-                'Constitución de sociedades',
-                'Contabilidad financiera',
-                'Reportes financieros',
-                'Cumplimiento tributario',
-                'Auditoría interna',
-                'Asesoría financiera',
-                'Gestión de nómina',
-                'Consultoría administrativa'
+                'Asesoría para la constitución de empresas',
+                'Registro contable y preparación de estados financieros mensuales',
+                'Cumplimiento de obligaciones fiscales, impuestos federales y estatales',
+                'Cálculo de nóminas del personal',
+                'Análisis de datos para el monitoreo en el cumplimiento de obligaciones fiscales',
+                'Reorganización contable y depuración de cuentas',
+                'Compensaciones y devoluciones de impuestos',
+                'Apoyo en llenado de dictámenes fiscales e ISSIF'
             ],
             'patente-intangibles': [
-                'Creación de marcas',
-                'Asesoría en activos intangibles'
+                'Gestión para la creación de marcas',
+                'Asesoría para la creación de intangibles'
             ],
             'migracion-inversion': [
                 'Obtén una segunda residencia o ciudadanía por inversión',
@@ -191,6 +196,89 @@
         serviceTypeSelect.addEventListener('change', function() {
             populateSpecificServices(this.value);
         });
+
+        // Manejador del envío del formulario
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Validación básica del cliente
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const serviceType = document.getElementById('services').value;
+            const specificService = document.getElementById('specific-service').value;
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !serviceType || !specificService || !message) {
+                showMessage('Por favor, completa todos los campos requeridos.', 'error');
+                return;
+            }
+
+            // Validar email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showMessage('Por favor, ingresa un correo electrónico válido.', 'error');
+                return;
+            }
+
+            // Desactivar botón y mostrar estado
+            submitBtn.disabled = true;
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Enviando...';
+
+            try {
+                // Enviar formulario vía AJAX
+                const formData = new FormData(contactForm);
+                
+                const response = await fetch('/html/send-contact.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    showMessage('¡Mensaje enviado exitosamente! Nos pondremos en contacto pronto.', 'success');
+                    // Limpiar formulario
+                    contactForm.reset();
+                    specificServiceSelect.disabled = true;
+                    specificServiceSelect.innerHTML = '<option value="">Primero selecciona un tipo de servicio</option>';
+                    
+                    // Ocultar mensaje después de 5 segundos
+                    setTimeout(() => {
+                        formMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    const errorMsg = data.errors ? data.errors.join(', ') : (data.message || 'Error al enviar el mensaje');
+                    showMessage('Error: ' + errorMsg, 'error');
+                }
+            } catch (error) {
+                showMessage('Error de conexión: ' + error.message, 'error');
+                console.error('Error:', error);
+            } finally {
+                // Reactivar botón
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+
+        // Función para mostrar mensajes
+        function showMessage(message, type) {
+            formMessage.textContent = message;
+            formMessage.style.display = 'block';
+            
+            if (type === 'success') {
+                formMessage.style.backgroundColor = '#4CAF50';
+                formMessage.style.color = 'white';
+                formMessage.style.borderLeft = '4px solid #388E3C';
+            } else {
+                formMessage.style.backgroundColor = '#f44336';
+                formMessage.style.color = 'white';
+                formMessage.style.borderLeft = '4px solid #d32f2f';
+            }
+            
+            // Scroll al mensaje
+            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
 
         function toggleMenu() {
             const isOpen = nav.style.transform === 'translateX(0px)';

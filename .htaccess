@@ -1,17 +1,26 @@
-# .htaccess - Optimización SEO y rendimiento para NC FiscAl
+# NC FISCAL - .htaccess para WordPress en raíz + sitio HTML en /html/
 
-# Habilitar mod_rewrite
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
-    
-    # Remover www si está presente
-    RewriteCond %{HTTP_HOST} ^www\.ncfiscal\.mx$ [NC]
-    RewriteRule ^(.*)$ https://ncfiscal.mx/$1 [R=301,L]
-    
-    # Forzar HTTPS
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # NO reescribir si es un archivo o directorio real
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Excluir /html/ de la reescritura de WordPress
+    RewriteRule ^html(/|$) - [L]
+
+    # Si solicita /styles.css o /src/*, redirigir a /html/
+    RewriteCond %{REQUEST_URI} ^/(styles\.css|src/|send-contact\.php)
+    RewriteRule ^(.*)$ /html/$1 [L]
+
+    # Redirigir raíz a /html/
+    RewriteRule ^$ /html/ [L]
+
+    # Reescritura estándar de WordPress para todo lo demás
+    RewriteRule . /index.php [L]
 </IfModule>
 
 # Compresión GZIP
