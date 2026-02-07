@@ -14,9 +14,13 @@
     --color-blue: #0066cc;
     --color-blue-rgb: 0, 102, 204;
     --color-blue-light: #3399ff;
-    --color-blue-dark: #004d99;
+    --color-blue-dark: #003469;
     --color-white: #f5f5f5;
     --color-gray: #999999;
+    --color-green: #ffffff;
+    --colorshadow: 0 2px 6px rgba(0, 0,0, 0.6);
+    --colorshadow-white: 0 2px 6px rgba(255, 255, 255, 0.6);
+    --colorcomponent:#01284f
 }
 
 /* RESET & BASE */
@@ -33,14 +37,6 @@ html, body {
 
 /* FONDO GLOBAL - CERRO SILLA */
 body {
-    background: 
-        linear-gradient(135deg, rgba(26, 26, 26, 0.85) 0%, rgba(0, 102, 204, 0.25) 50%, rgba(26, 26, 26, 0.85) 100%),
-        linear-gradient(to bottom, rgba(26, 26, 26, 0.90), rgba(0, 102, 204, 0.05)),
-        url('src/Cerro_Silla_MTY.png');
-    background-attachment: fixed;
-    background-size: cover, cover, cover;
-    background-position: center, center, bottom center;
-    background-repeat: no-repeat;
     color: var(--color-white);
     min-height: 100vh;
 }
