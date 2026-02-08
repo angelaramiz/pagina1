@@ -31,7 +31,7 @@ CAMBIOS IMPLEMENTADOS - 23 de enero de 2026
 
 4. CANONICAL TAGS
    ✓ Agregados a cada página para evitar duplicados
-   ✓ Formato: https://ncfiscal.mx/[página].html
+   ✓ Formato: https://nc-fiscl.mx/[página].html
 
 5. OPEN GRAPH TAGS (para compartir en redes)
    ✓ og:title - Título optimizado para redes
@@ -183,8 +183,8 @@ PRÓXIMOS PASOS
    URL: https://www.bing.com/webmaster/
 
 3. Verificar indexación
-   - En Google: site:ncfiscal.mx
-   - En Bing: site:ncfiscal.mx
+   - En Google: site:nc-fiscl.mx
+   - En Bing: site:nc-fiscl.mx
 
 4. Monitorear posicionamiento
    - Usar herramientas como Semrush, Ahrefs o Ubersuggest

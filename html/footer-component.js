@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Crear el HTML del footer
     const footerHTML = `
     <footer style="text-align: center; padding: 1rem; background:  #01284f; color: var(--color-white);">
-        Derechos reservados de NCFiscAl 2026
+        Derechos reservados de NC FiscAl 2026
     </footer>
     `;
     

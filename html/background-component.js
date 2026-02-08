@@ -2,7 +2,7 @@
 // Este componente inyecta la imagen de fondo con overlay azul en todas las páginas
 
 function getBackgroundImage() {
-    return window.innerWidth <= 768 ? '/html/src/MTY-Movil.jpeg' : '/html/src/mty.png';
+    return '/html/src/mty.png';
 }
 
 function initializeBackground() {
