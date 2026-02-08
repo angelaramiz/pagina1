@@ -4,9 +4,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Crear el HTML del header
     const headerHTML = `
-    <header style="background-color: #01284f;">
+    <header style="background-color: #01284f; width: 100%; margin: 0; padding: 1rem 2rem; box-sizing: border-box;">
         <div class="header-container">
-            <a href="/html/index.html" class="logo" style="font-family: 'PT Serif', serif; font-weight: 700; color: var(--color-white); font-size: 1.5rem; text-decoration: none;">NCFiscAL</a>
+            <a href="/html/index.html" class="logo" style="font-family: 'PT Serif', serif; font-weight: 700; color: var(--color-white); font-size: 2.5rem; text-decoration: none;">NC FiscAl</a>
             <button class="header-toggle" onclick="toggleHeader()">☰</button>
             <nav class="header-nav" id="header-nav">
                 <a style="color: var(--color-orange);" href="/html/quienes-somos.html">Quiénes Somos</a>
@@ -17,12 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
     </header>
     `;
 
-    // Inyectar el header al inicio del body (después de la imagen de fondo)
-    const body = document.body;
-    const firstChild = body.firstChild;
-    const wrapper = document.createElement('div');
-    wrapper.innerHTML = headerHTML;
-    body.insertBefore(wrapper.firstElementChild, firstChild.nextSibling);
+    // Inyectar el header en el placeholder
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    if (headerPlaceholder) {
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = headerHTML;
+        const headerElement = wrapper.firstElementChild;
+        headerPlaceholder.replaceWith(headerElement);
+    }
 });
 
 function toggleHeader() {

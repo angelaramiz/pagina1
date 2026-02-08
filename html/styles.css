@@ -18,7 +18,7 @@
     --color-white: #f5f5f5;
     --color-gray: #999999;
     --color-green: #ffffff;
-    --colorshadow: 0 2px 6px rgba(0, 0,0, 0.6);
+    --colorshadow: 0 2px 6px rgba(0, 0,0, 0.8);
     --colorshadow-white: 0 2px 6px rgba(255, 255, 255, 0.6);
     --colorcomponent:#01284f
 }
@@ -35,10 +35,24 @@ html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.inx {
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 15vh 8vw 5vh 8vw;
+}
+
 /* FONDO GLOBAL - CERRO SILLA */
 body {
     color: var(--color-white);
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 /* TIPOGRAFÍA */
@@ -79,7 +93,7 @@ header {
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 50;
     box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
     width: 100%;
 }
@@ -1075,4 +1089,51 @@ hr {
     height: 2px;
     background: linear-gradient(90deg, var(--color-blue) 0%, var(--color-blue-light) 50%, var(--color-blue) 100%);
     margin: 2rem 0;
+}
+
+/* MAIN HERO - MÁRGENES DINÁMICOS */
+.main-hero {
+    padding: 25vh 8vw 5vh 2vw !important;
+}
+
+/* Pantallas Ultra Anchas (>=1600px) */
+@media (min-width: 1600px) {
+    .main-hero {
+        padding: 30vh 20vw 5vh 2vw !important;
+    }
+}
+
+/* Pantallas Grandes (1200px - 1599px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+    .main-hero {
+        padding: 27vh 17vw 5vh 2vw !important;
+    }
+}
+
+/* Escritorio Mediano (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .main-hero {
+        padding: 22vh 12vw 4vh 2vw !important;
+    }
+}
+
+/* Tablets Grandes (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .main-hero {
+        padding: 18vh 8vw 4vh 1.5vw !important;
+    }
+}
+
+/* Móviles Grandes (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .main-hero {
+        padding: 12vh 4vw 3vh 1vw !important;
+    }
+}
+
+/* Móviles Pequeños (<576px) */
+@media (max-width: 575px) {
+    .main-hero {
+        padding: 8vh 2vw 2vh 0.5vw !important;
+    }
 }

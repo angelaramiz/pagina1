@@ -9,9 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
     </footer>
     `;
     
-    // Inyectar el footer antes del cierre de body
-    const body = document.body;
-    const wrapper = document.createElement('div');
-    wrapper.innerHTML = footerHTML;
-    body.appendChild(wrapper.firstElementChild);
+    // Inyectar el footer en el placeholder
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+    if (footerPlaceholder) {
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = footerHTML;
+        const footerElement = wrapper.firstElementChild;
+        footerPlaceholder.replaceWith(footerElement);
+    }
 });
