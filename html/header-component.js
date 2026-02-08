@@ -4,7 +4,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Crear el HTML del header
     const headerHTML = `
-    <header style="background-color: #01284f; width: 100%; margin: 0; padding: 1rem 2rem; box-sizing: border-box;">
+    <header style="background-color: #01284f; width: 100%; margin: 0;  box-sizing: border-box;">
         <div class="header-container">
             <a href="/html/index.html" class="logo" style="font-family: 'PT Serif', serif; font-weight: 700; color: var(--color-white); font-size: 2.5rem; text-decoration: none;">NC FiscAl</a>
             <button class="header-toggle" onclick="toggleHeader()">☰</button>
