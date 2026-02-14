@@ -39,14 +39,12 @@ function toggleHeader() {
 
 function openHeader() {
     const headerNav = document.getElementById('header-nav');
-    const backdrop = document.getElementById('backdrop');
     headerNav.classList.add('open');
-    backdrop.style.display = 'block';
+    headerNav.style.maxHeight = '300px';
 }
 
 function closeHeader() {
     const headerNav = document.getElementById('header-nav');
-    const backdrop = document.getElementById('backdrop');
     headerNav.classList.remove('open');
-    backdrop.style.display = 'none';
+    headerNav.style.maxHeight = '0';
 }

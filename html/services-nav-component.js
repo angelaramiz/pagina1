@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Crear el HTML del menú de servicios
     const servicesNavHTML = `
-    <div id="backdrop" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 50;" onclick="closeServicesMenu(); closeHeader()"></div>
+    <div id="backdrop" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 50;" onclick="closeServicesMenu()"></div>
     
     <nav id="services-menu" style="display: none; position: fixed; top: 0; right: 0; height: 100vh; width: 100%; max-width: 300px; background: var(--colorcomponent); padding: 2rem 1rem; transform: translateX(100%); transition: transform 0.3s ease; z-index: 300; border-left: 4px solid var(--color-blue);">
         <button onclick="closeServicesMenu()" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--color-white); font-size: 1.5rem; cursor: pointer;">✕</button>

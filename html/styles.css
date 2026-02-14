@@ -151,6 +151,7 @@ header nav {
     border-bottom: 2px solid transparent;
     white-space: nowrap;
     display: inline-block;
+    pointer-events: auto;
 }
 
 .header-nav a:hover {
@@ -606,6 +607,31 @@ li {
 }
 
 /* Grid Responsivo para Información de Contacto */
+@media (min-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    
+    .contact-grid > :last-child {
+        grid-column: 1 / -1;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .contact-grid > :last-child {
+        grid-column: 1 / -1;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 767px) {
     .contact-grid {
         grid-template-columns: 1fr !important;
@@ -701,7 +727,7 @@ li {
         border-bottom: 4px solid var(--color-blue);
         border-left: 2px solid var(--color-blue);
         border-right: 2px solid var(--color-blue);
-        z-index: 150;
+        z-index: 200;
         order: 3;
         width: 100%;
         flex-basis: 100%;
