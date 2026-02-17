@@ -612,11 +612,6 @@ li {
         grid-template-columns: 1fr 1fr !important;
     }
     
-    .contact-grid > :last-child {
-        grid-column: 1 / -1;
-        max-width: 50%;
-        margin: 0 auto;
-    }
 }
 
 @media (max-width: 991px) and (min-width: 768px) {
@@ -625,11 +620,6 @@ li {
         gap: 1rem !important;
     }
     
-    .contact-grid > :last-child {
-        grid-column: 1 / -1;
-        max-width: 50%;
-        margin: 0 auto;
-    }
 }
 
 @media (max-width: 767px) {
